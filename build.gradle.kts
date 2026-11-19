@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("application")
 }
 
 group = "com.hugonavarro.tema02"
@@ -15,6 +16,14 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+application {
+    mainClass.set("com.hugonavarro.tema02.carreraespacial.Ejercicio9")
+}
+
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
 }
